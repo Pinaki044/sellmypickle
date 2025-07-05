@@ -1,7 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Sell My Pickle - Home</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <h1>Welcome to Sell My Pickle 🥒</h1>
@@ -13,30 +15,57 @@
         <a href="/login/">Login</a>
     </nav>
     <hr>
-    <section>
-        <h2>Categories</h2>
-        <!-- Categories section -->
+    <section id="categories">
+    <h2>Categories</h2>
+    <ul>
+        {% for cat in categories %}
+            <li>{{ cat.name }}</li>
+        {% empty %}
+            <li>No categories available</li>
+        {% endfor %}
+    </ul>
     </section>
 
-    <section>
-        <h2>Newly Added</h2>
-        <!-- New items -->
+    <section id="new">
+    <h2>Newly Added</h2>
+    <ul>
+        {% for item in new_items %}
+            <li>{{ item.name }} - ₹{{ item.price }}</li>
+        {% empty %}
+            <li>No new items</li>
+        {% endfor %}
+    </ul>
     </section>
+ 
 
     <section>
         <h2>Offers</h2>
         <!-- Offer items -->
     </section>
 
-    <section>
-        <h2>Stories of SHGs</h2>
-        <!-- Inspirational stories -->
+    <section id="stories">
+    <h2>Stories of SHGs</h2>
+    <ul>
+        {% for group in shg_stories %}
+            <li>{{ group.name }} — {{ group.address }}</li>
+        {% empty %}
+            <li>No stories yet</li>
+        {% endfor %}
+    </ul>
     </section>
 
-    <section>
-        <h2>Contribute to Support SHGs 💛</h2>
-        <!-- Contribution info -->
-    </section>
+
+    <section id="contribute">
+  <h2>💛 Contribute to Support SHGs</h2>
+  <p>Have a request or want to contribute? Fill this form to get in touch!</p>
+  <a href="https://forms.gle/bcvGhZiS759SVH638" target="_blank">
+	  <button style="background-color: #f4c542; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer;">
+                   📋 Fill Contribution Form
+          </button>
+  </a>
+  </section>
+
+
 </body>
 </html>
 
