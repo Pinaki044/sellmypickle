@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Type, Item, SHG
 
 def home(request):
+    print('home mai gaya')
     categories = Type.objects.all()
     new_items = Item.objects.order_by('-id')[:5]
     shg_stories = SHG.objects.all()[:3]  # can limit or filter as needed
