@@ -1,0 +1,18 @@
+{% extends 'market/base.html' %}
+{% block content %}
+  <h1>Self Help Group (SHG) Stories</h1>
+  <div class="shg-grid">
+    {% for shg in shgs %}
+      <div class="shg-card">
+        <h2>
+           <a href="{% url 'shg_detail' shg.pk %}">
+             {{ shg.name }}
+           </a>
+        </h2>
+        <p><strong>District:</strong> {{ shg.district }}</p>
+        <p>{{ shg.description|truncatewords:30 }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
+

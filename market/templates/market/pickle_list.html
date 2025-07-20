@@ -1,0 +1,15 @@
+{% extends 'market/base.html' %}
+{% block content %}
+  <h1>Browse Pickles</h1>
+  <div class="product-grid">
+    {% for pickle in pickles %}
+      <div class="product-card">
+        <h2>{{ pickle.name }}</h2>
+        <p><strong>Price:</strong> ₹{{ pickle.price }}</p>
+        <p><strong>SHG:</strong> {{ pickle.shg.name }}</p>
+        <p>{{ pickle.description|truncatewords:20 }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
+

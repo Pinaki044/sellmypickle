@@ -45,6 +45,7 @@
 
     <section id="stories">
     <h2>Stories of SHGs</h2>
+    <a href="{% url 'shg_list' %}">See All SHG Stories</a>
     <ul>
         {% for group in shg_stories %}
             <li>{{ group.name }} — {{ group.address }}</li>
@@ -53,6 +54,8 @@
         {% endfor %}
     </ul>
     </section>
+ 
+
 
 
     <section id="contribute">

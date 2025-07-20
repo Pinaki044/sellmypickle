@@ -1,0 +1,12 @@
+{% extends 'market/base.html' %}
+
+{% block content %}
+  <div class="shg-detail">
+    <h2>{{ story.name }}</h2>
+    <p><strong>Address:</strong> {{ story.address }}</p>
+    <p><strong>Story:</strong></p>
+    <p>{{ story.story }}</p>
+    <a href="{% url 'shg_list' %}">← Back to SHG Stories</a>
+  </div>
+{% endblock %}
+
