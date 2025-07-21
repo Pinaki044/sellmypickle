@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browse Pickles</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Browse Pickles 🛒</h1>
+    <a href="/">← Back to Home</a>
+    <hr>
+    <ul>
+        {% for item in items %}
+            <li>
+                <strong>{{ item.name }}</strong><br>
+                {{ item.description }}<br>
+                ₹{{ item.price }}
+            </li>
+        {% empty %}
+            <li>No items available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
